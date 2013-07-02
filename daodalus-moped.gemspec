@@ -20,5 +20,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "daodalus-moped"
   gem.require_paths = ["lib"]
-  gem.version       = "0.1.1"
+  gem.version       = "0.0.1"
 end
