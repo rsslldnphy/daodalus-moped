@@ -1,4 +1,4 @@
-require 'mongo'
+require 'moped'
 require 'optional'
 
 require 'daodalus/connection'

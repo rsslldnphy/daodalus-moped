@@ -3,13 +3,15 @@ module Daodalus
     module Queries
 
       def find(options = {})
-        options = options.merge(fields: query.selects) if query.has_selects?
-        dao.find(query.wheres, options)
+        dao.find(query.wheres).select(query.selects)
       end
 
-      def find_one(options = {})
-        options = options.merge(fields: query.selects) if query.has_selects?
-        dao.find_one(query.wheres, options)
+      def find_one
+        Option[dao.find(query.wheres).select(query.selects).one]
+      end
+
+      def remove(options = {})
+        dao.find(query.wheres).remove_all
       end
 
       def where field=nil

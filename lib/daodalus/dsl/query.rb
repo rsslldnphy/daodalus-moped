@@ -25,10 +25,6 @@ module Daodalus
         @selects.empty? ? @selects : {'_id' => 0}.merge(@selects)
       end
 
-      def has_selects?
-        !selects.empty?
-      end
-
       private
 
       def add_where clause

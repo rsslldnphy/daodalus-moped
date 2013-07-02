@@ -8,8 +8,9 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'id'
   gem.add_runtime_dependency 'optional'
-  gem.add_runtime_dependency 'mongo'
-  gem.add_runtime_dependency 'bson_ext'
+
+  gem.add_runtime_dependency 'moped'
+  gem.add_runtime_dependency 'em-synchrony-moped'
 
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'simplecov'

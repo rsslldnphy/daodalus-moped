@@ -14,5 +14,5 @@ RSpec.configure do |config|
   config.before(:each) { MongoCleaner.clean }
 end
 
-conn = Mongo::MongoClient.new('localhost', 27017, pool_size: 5, pool_timeout: 5)
+conn = Moped::Session.new(['localhost:27017'])
 Daodalus::Connection.register(conn)

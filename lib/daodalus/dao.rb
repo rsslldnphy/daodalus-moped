@@ -12,26 +12,20 @@ module Daodalus
     end
 
     def coll
-      @coll ||= Daodalus::Connection.fetch(connection)[db.to_s][collection.to_s]
+      @coll ||= Daodalus::Connection.fetch(connection).tap do |conn|
+        conn.use(db.to_s)
+      end[collection.to_s]
     end
 
     delegate [
       :find,
-      :update,
+      :find_and_modify,
       :insert,
       :save,
-      :remove,
       :count,
-      :aggregate
+      :aggregate,
+      :update
     ] => :coll
-
-    def find_one(*args)
-      Option[coll.find_one(*args)]
-    end
-
-    def find_and_modify(*args)
-      Option[coll.find_and_modify(*args)]
-    end
 
     private
 

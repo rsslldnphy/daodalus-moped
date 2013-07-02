@@ -3,7 +3,7 @@ require 'spec_helper'
 module Daodalus
   describe Connection do
 
-    let (:conn) { Mongo::MongoClient.new('localhost', 27017, pool_size: 5) }
+    let (:conn) { Moped::Session.new(['localhost:27017']) }
 
     it 'allows connections to be registered and fetched by name' do
       Daodalus::Connection.register(conn, :animalhouse)
