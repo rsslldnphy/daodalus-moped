@@ -2,16 +2,16 @@ module Daodalus
   module DSL
     module Updates
 
-      def update(options = {})
-        dao.update(query.wheres, query.updates, options)
+      def update
+        dao.find(query.wheres).update(query.updates)
       end
 
       def upsert(options = {})
-        update(options.merge(upsert: true))
+        dao.find(query.wheres).upsert(query.updates)
       end
 
-      def find_and_modify(options = {})
-        dao.find_and_modify(options.merge(query: query.wheres, update: query.updates))
+      def find_and_modify
+        Option[dao.find(query.wheres).modify(query.updates)]
       end
 
       def set(fields)
