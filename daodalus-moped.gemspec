@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["russell.dunphy@onthebeach.co.uk"]
   gem.description   = %q{Take the sting out of building complex MongoDB queries, updates and aggregations.}
   gem.summary       = gem.description
-  gem.homepage      = "http://onthebeach.github.io/daodalus"
+  gem.homepage      = "http://onthebeach.github.io/daodalus-moped"
 
   gem.add_runtime_dependency 'id'
   gem.add_runtime_dependency 'optional'
@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "daodalus"
+  gem.name          = "daodalus-moped"
   gem.require_paths = ["lib"]
   gem.version       = "0.1.1"
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    daodalus (0.1.1)
+    daodalus-moped (0.1.1)
       em-synchrony-moped
       id
       moped
@@ -64,7 +64,7 @@ PLATFORMS
 
 DEPENDENCIES
   cucumber
-  daodalus!
+  daodalus-moped!
   moped (~> 1.4.5)
   optional
   rake
